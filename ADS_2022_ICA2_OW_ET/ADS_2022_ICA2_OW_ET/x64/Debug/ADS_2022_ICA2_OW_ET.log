@@ -1,6 +1,2 @@
 ﻿  Source.cpp
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\Source.cpp(8,11): error C2988: unrecognizable template declaration/definition
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\Source.cpp(8,11): error C2143: syntax error: missing ';' before '<'
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\Source.cpp(8,6): error C2182: 'SList': this use of 'void' is not valid
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\Source.cpp(8,11): error C2059: syntax error: '<'
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\Source.cpp(16,1): error C2589: '<end Parse>': illegal token on right side of '::'
+  ADS_2022_ICA2_OW_ET.vcxproj -> C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_2022_ICA2_OW_ET\x64\Debug\ADS_2022_ICA2_OW_ET.exe
