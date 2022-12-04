@@ -2,12 +2,16 @@
 #include <fstream>
 #include "Gamer.h"
 #include <vector>
+#include <iomanip>
+
+
 using namespace std;
 
 void display(Gamer& game)
 {
 	
 }
+//create gammer struct
 struct gamerStruct
 {
 	string id;
@@ -15,24 +19,30 @@ struct gamerStruct
 	string email;
 	string postcode;
 };
+
 void readFile()
 {
+	//read from ourdata txt file
 	string line;
 	ifstream fin("ourdata.txt");
 	if (fin)
 	{
 		while (!fin.eof())
 		{
+			//read the line and print as line in terminal on run
 			getline(fin, line);
 			cout << line << endl;
 			gamerStruct game;
 			vector<string> items;
 			string field = "";
 			bool quoteOpen = false;
+			//loop for each line
 			for (int i = 0; i < line.length(); i++)
 			{
+				//scan for , to seperate the data
 				if (!quoteOpen && line[i] == ',')
 				{
+					//push items into Nodes
 					items.push_back(field);
 					field = "";
 				}
