@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADS_CA2_Tree", "ADS_CA2_Tre
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NodeTests", "NodeTests\NodeTests.vcxproj", "{5EEC9958-FD4B-4477-8302-042E330B0635}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinaryTreeTest", "BinaryTreeTest\BinaryTreeTest.vcxproj", "{8D371E51-5782-4FF9-BCC3-C010EACDA4E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{5EEC9958-FD4B-4477-8302-042E330B0635}.Release|x64.Build.0 = Release|x64
 		{5EEC9958-FD4B-4477-8302-042E330B0635}.Release|x86.ActiveCfg = Release|Win32
 		{5EEC9958-FD4B-4477-8302-042E330B0635}.Release|x86.Build.0 = Release|Win32
+		{8D371E51-5782-4FF9-BCC3-C010EACDA4E0}.Debug|x64.ActiveCfg = Debug|x64
+		{8D371E51-5782-4FF9-BCC3-C010EACDA4E0}.Debug|x64.Build.0 = Debug|x64
+		{8D371E51-5782-4FF9-BCC3-C010EACDA4E0}.Debug|x86.ActiveCfg = Debug|Win32
+		{8D371E51-5782-4FF9-BCC3-C010EACDA4E0}.Debug|x86.Build.0 = Debug|Win32
+		{8D371E51-5782-4FF9-BCC3-C010EACDA4E0}.Release|x64.ActiveCfg = Release|x64
+		{8D371E51-5782-4FF9-BCC3-C010EACDA4E0}.Release|x64.Build.0 = Release|x64
+		{8D371E51-5782-4FF9-BCC3-C010EACDA4E0}.Release|x86.ActiveCfg = Release|Win32
+		{8D371E51-5782-4FF9-BCC3-C010EACDA4E0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

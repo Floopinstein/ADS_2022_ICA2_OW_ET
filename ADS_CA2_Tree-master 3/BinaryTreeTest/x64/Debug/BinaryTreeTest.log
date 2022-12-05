@@ -1,0 +1,4 @@
+﻿  BinaryTreeTest.cpp
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(133): warning C4715: 'BinaryTree<int,int>::Delete': not all control paths return a value
+     Creating library D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\x64\Debug\BinaryTreeTest.lib and object D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\x64\Debug\BinaryTreeTest.exp
+  BinaryTreeTest.vcxproj -> D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\x64\Debug\BinaryTreeTest.dll
