@@ -3,17 +3,98 @@
 
 using namespace std;
 
-//create gamer class
+
+//class Gamer
+//{
+	//string user_id;
+	//string rank;
+	//string first_name;
+	//string sName;
+	//string gender;
+	//string dob;
+	//string email;
+	//string phone;
+	//string postcode;
+	//string country;
+	//string lastLogOn;
+	//string lastLogOnTime;
+	//string joinedON;
+	//double accountCredit;
+	//string address;
+//
+//
+//public:
+//	Gamer();
+//	Gamer(string user_id, string first_name, string email);
+//	Gamer(string user_id, int rank, string first_Name, string sName, string gender, string dob, string email, string phone, string postcode, string address, string country, string lastLogOn, string lastLogOnTime, string joinedON, double accountCredit);
+//
+//
+//	string getuser_id();
+//	string getfirst_name();
+//	string getemail();
+//
+//	string Change_to_string();
+//
+//};
+
 class Gamer
 {
-	//gammer variables for Key
-	string id;
-	string name;
+#pragma region Fields
+	string user_id;
+	int rank;
+	string first_name;
+	string sName;
+	string gender;
+	string dob;
 	string email;
+	string phone;
 	string postcode;
+	string country;
+	string lastLogOn;
+	string lastLogOnTime;
+	string joinedON;
+	double accountCredit;
+	string address;
+#pragma endregion
 
-	//make public
 public:
-	Gamer();
-	Gamer(string id, string name, string email, string postcode);
+
+#pragma region Constructors
+	Gamer(string user_id, string first_name, string email)
+		: user_id(user_id), first_name(first_name), email(email)
+	{
+	}
+#pragma endregion
+
+#pragma region Get/Set
+	string getUser_id() const { return this->user_id; }
+	string getFirst_name() const { return this->first_name; }
+	string getEmail() const { return this->email; }
+#pragma endregion
+
+#pragma region Operators & Hash
+
+	bool operator==(const Gamer& gamer)
+	{
+		return this->user_id == gamer.user_id
+			&& this->first_name == gamer.first_name
+			&& this->email == gamer.email;
+	}
+
+	friend ostream& operator<<(ostream& output, Gamer& gamer)
+	{
+		output << gamer.user_id << ",";
+		output << gamer.first_name << ",";
+		output << gamer.email << ",";
+		return output;
+	}
+
+	friend istream& operator>>(istream& input, Gamer)
+	{
+		string gamerAsString;
+		input >> gamerAsString;
+
+		return input;
+	}
+
 };

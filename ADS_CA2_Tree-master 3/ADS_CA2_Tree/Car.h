@@ -7,7 +7,8 @@ using namespace std;
 /// <summary>
 /// Represents a row of data in a CSV file of Car records
 /// </summary>
-class Car {
+class Car 
+{
 #pragma region Fields
 	string make;
 	int year;
@@ -21,6 +22,7 @@ public:
 	Car(string make, int year, double price, Date date)
 		: make(make), year(year), price(price), date(date)
 	{
+
 	}
 #pragma endregion
 
