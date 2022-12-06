@@ -25,17 +25,16 @@ namespace NodeTests
 		//Testing Add Function//
 		
 			//Testing for when new data is Equal
-	/*	TEST_METHOD(TestMethodEqual)
+		TEST_METHOD(TestMethodEqual)
 		{
 			TNode<int, int> node(5, 5);
 			Assert::AreEqual(5, node.getData());
 			Assert::IsNull(node.getLeft());
 			node.add(5, 6);
-			Assert::IsNotNull(node.getLeft());
-			Assert::AreEqual(5, node.getRight()->getData());
-
+			Assert::IsNotNull(node.getRight());
+			Assert::AreEqual(6, node.getRight()->getData());
 		}
-		*/
+		
 
 			//Testing for when new data is less than
 		TEST_METHOD(TestMethodLessThan)

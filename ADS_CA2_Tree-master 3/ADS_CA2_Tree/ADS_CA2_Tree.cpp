@@ -47,7 +47,7 @@ using namespace std;
 void demoSimpleHash();
 //void demoDateHash();
 //void demoParseString();
-void demoCSVToObject();
+//void demoCSVToObject();
 
 int main()
 {
@@ -60,8 +60,8 @@ int main()
 	//cout << endl << "demoParseString()..........." << endl;
 	//demoParseString();*/
 
-	cout << endl << "demoCSVToObject()..........." << endl;
-	demoCSVToObject();
+	//cout << endl << "demoCSVToObject()..........." << endl;
+	//demoCSVToObject();
 
 	return 0;
 }
@@ -129,23 +129,23 @@ void demoSimpleHash()
 //}
 
 //best - supports rows of data that contain commas and parenthesis - thanks for Derek!
-void demoCSVToObject(BinaryTree<GamerKey, Gamer*>& tree)
-{
+//void demoCSVToObject(BinaryTree<GamerKey, GamerData*>& tree)
+//{
 	//note: data is a sub-folder under the folder with main CPP file
-	string fileName = "data/data_1000.csv";
-	vector<vector<string>> allData = readDelimitedRows(fileName);
-
-	for (vector<string> row : allData) 
-	{
-		Gamer g = new Gamer(row[0], row[1]);
-		GamerKey key(row[0], row[2], row[...]);
-
-		tree.add(key, g);
-		/*for (string field : row) 
-		{
-			cout << field << ", ";
-		}
-		*/
-		cout << endl <<"----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
-	}
-}
+//	string fileName = "data/data_1000.csv";
+//	vector<vector<string>> allData = readDelimitedRows(fileName);
+//
+//	for (vector<string> row : allData) 
+//	{
+//		GamerData Gdata = new GamerData(row[0], row[1]);
+//		GamerKey Gkey(row[0], row[2], row[...]);
+//
+//		tree.add(Gkey, Gdata);
+//		/*for (string field : row) 
+//		{
+//			cout << field << ", ";
+//		}
+//		*/
+//		cout << endl <<"----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+//	}
+//}

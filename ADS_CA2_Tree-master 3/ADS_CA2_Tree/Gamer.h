@@ -37,7 +37,7 @@ using namespace std;
 //
 //};
 
-class Gamer
+class GamerData
 {
 #pragma region Fields
 	string user_id;
@@ -60,7 +60,8 @@ class Gamer
 public:
 
 #pragma region Constructors
-	Gamer(string user_id, string first_name, string email)
+	GamerData(string user_id, int rank, string first_name, string sName, string gender, string dob, string email, string phone, string postcode,
+			  string country, string lastLogOn, string lastLogOnTime, string joinedON, double accountCredit, string address)
 		: user_id(user_id), first_name(first_name), email(email)
 	{
 	}
@@ -74,14 +75,14 @@ public:
 
 #pragma region Operators & Hash
 
-	bool operator==(const Gamer& gamer)
+	bool operator==(const GamerData& gamer)
 	{
 		return this->user_id == gamer.user_id
 			&& this->first_name == gamer.first_name
 			&& this->email == gamer.email;
 	}
 
-	friend ostream& operator<<(ostream& output, Gamer& gamer)
+	friend ostream& operator<<(ostream& output, GamerData& gamer)
 	{
 		output << gamer.user_id << ",";
 		output << gamer.first_name << ",";
@@ -89,7 +90,7 @@ public:
 		return output;
 	}
 
-	friend istream& operator>>(istream& input, Gamer)
+	friend istream& operator>>(istream& input, GamerData)
 	{
 		string gamerAsString;
 		input >> gamerAsString;
