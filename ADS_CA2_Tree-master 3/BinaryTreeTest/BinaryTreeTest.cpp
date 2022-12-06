@@ -135,7 +135,7 @@ namespace BinaryTreeTest
 			Assert::AreEqual(8, right->getRight()->getData());
 		}
 
-		//Test failing after removing (2, 2) saying that it still has 7 nodes, cant figure out, works on other tests
+		//Test failing after removing (2, 2) saying that it still has 7 nodes, cant figure out, works on other tests (also worked a few times before)
 		TEST_METHOD(TestRemoveNodeWithTwoChildren)
 		{
 			  BinaryTree<int, int> tree;
@@ -216,6 +216,39 @@ namespace BinaryTreeTest
 			tree.add(8, 8);
 			Assert::IsFalse(tree.Search(4));
 		}
+
+		TEST_METHOD(TestDepth)
+		{
+			BinaryTree<int, int> tree;
+			tree.add(3, 3);
+			tree.add(9, 9);
+			tree.add(5, 5);
+			tree.add(2, 2);
+			tree.add(1, 1);
+			tree.add(6, 6);
+			tree.add(8, 8);
+			tree.add(10, 10);
+
+
+			Assert::AreEqual(4, tree.Depth(8));
+		}
+
+		TEST_METHOD(TestHeight)
+		{
+			BinaryTree<int, int> tree;
+			tree.add(3, 3);
+			tree.add(9, 9);
+			tree.add(5, 5);
+			tree.add(2, 2);
+			tree.add(1, 1);
+			tree.add(6, 6);
+			tree.add(8, 8);
+			tree.add(10, 10);
+
+
+			Assert::AreEqual(5, tree.Height());
+		}
+
 
 	};
 }

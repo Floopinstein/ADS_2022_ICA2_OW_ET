@@ -1,5 +1,9 @@
 ﻿  BinaryTreeTest.cpp
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(265): warning C4715: 'BinaryTree<int,int>::Search': not all control paths return a value
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(168): warning C4715: 'BinaryTree<int,int>::Delete': not all control paths return a value
-     Creating library D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\x64\Debug\BinaryTreeTest.lib and object D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\x64\Debug\BinaryTreeTest.exp
-  BinaryTreeTest.vcxproj -> D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\x64\Debug\BinaryTreeTest.dll
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(325,31): error C2059: syntax error: '!='
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(306): message : while compiling class template member function 'int BinaryTree<int,int>::Height(void)'
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\BinaryTreeTest\BinaryTreeTest.cpp(249): message : see reference to function template instantiation 'int BinaryTree<int,int>::Height(void)' being compiled
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\BinaryTreeTest\BinaryTreeTest.cpp(18): message : see reference to class template instantiation 'BinaryTree<int,int>' being compiled
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(325,1): error C2143: syntax error: missing ';' before '{'
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(328,1): error C2181: illegal else without matching if
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(328,36): error C2059: syntax error: '!='
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(328,1): error C2143: syntax error: missing ';' before '{'

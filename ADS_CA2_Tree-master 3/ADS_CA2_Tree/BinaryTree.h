@@ -28,6 +28,9 @@ public:
     void PrintPreOrder(TNode<K, E>* node);
     void PrintPostOrder(TNode<K, E>* node);
 	bool Search(K KeyItem);
+	int Depth(K KeyItem);
+	int Height();
+	void SubTree(K keyItem, E Data);
 
 
 
@@ -263,4 +266,82 @@ bool BinaryTree<K, E>::Search(K keyItem)
 	}
 	if (!found)
 		return false;
+}
+
+
+template <typename K, typename E>
+int BinaryTree<K, E>::Depth(K keyItem){
+
+	TNode<K, E>* toBeSearched = root;
+	TNode<K, E>* parent = nullptr;
+	bool found = false;
+	int DepthCounter = -1;
+
+	while (!found && toBeSearched != nullptr) {
+
+		DepthCounter++;
+
+		if (toBeSearched->getKey() == keyItem) {
+			found = true;
+			return DepthCounter;
+		}
+		else {
+			parent = toBeSearched;
+
+			if (toBeSearched->getKey() > keyItem) {
+				toBeSearched = toBeSearched->getLeft();
+			}
+			else {
+				toBeSearched = toBeSearched->getRight();
+			}
+		}
+	}
+	if (!found)
+		return 0;
+
+}
+
+
+template <typename K, typename E>
+int BinaryTree<K, E>::Height(){
+
+	TNode<K, E>* toBeSearched = root;
+	TNode<K, E>* parent = nullptr;
+	bool found = false;
+	int HeightCounter = 0;
+
+	while (!found && toBeSearched != nullptr){
+
+		HeightCounter++;
+
+		if (toBeSearched->getRight() == nullptr && toBeSearched->getLeft() == nullptr){
+			found = true;
+			return HeightCounter;
+
+		}
+		else {
+			parent = toBeSearched;
+
+			if (toBeSearched->getLeft != nullptr){
+				toBeSearched = toBeSearched->getLeft();
+			}
+			else if(toBeSearched->getRight != nullptr) {
+				toBeSearched = toBeSearched->getRight();
+			}
+		}
+	}
+	if (!found)
+		return 0;
+
+}
+
+
+
+
+template <typename K, typename E>
+void BinaryTree<K, E>::SubTree(K keyItem, E Data){
+
+
+
+
 }
