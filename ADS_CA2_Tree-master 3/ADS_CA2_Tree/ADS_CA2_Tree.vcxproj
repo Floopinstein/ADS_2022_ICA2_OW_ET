@@ -133,6 +133,8 @@
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Car.h" />
+    <ClInclude Include="Gamer.h" />
+    <ClInclude Include="GamerKey.h" />
     <ClInclude Include="TNode.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>

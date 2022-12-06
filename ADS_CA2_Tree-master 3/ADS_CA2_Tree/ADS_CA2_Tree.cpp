@@ -7,12 +7,10 @@
 #include "Car.h"
 #include "Date.h"
 #include "Gamer.h"
+#include "GamerKey.h"
+#include "BinaryTree.h"
 
 using namespace std;
-
-
-
-
 
 //Gamer::Gamer() {
 //	(*this).user_id = "ID123";
@@ -46,9 +44,6 @@ using namespace std;
 //	return this->user_id + " - " + this->first_name + " - " + this->email;
 
 
-
-
-
 void demoSimpleHash();
 //void demoDateHash();
 //void demoParseString();
@@ -78,7 +73,8 @@ int main()
 //		+ 349 * date.hash();
 //}
 
-void demoSimpleHash() {
+void demoSimpleHash() 
+{
 
 
 	hash<string> hasherStr;
@@ -133,16 +129,23 @@ void demoSimpleHash() {
 //}
 
 //best - supports rows of data that contain commas and parenthesis - thanks for Derek!
-void demoCSVToObject()
+void demoCSVToObject(BinaryTree<GamerKey, Gamer*>& tree)
 {
 	//note: data is a sub-folder under the folder with main CPP file
 	string fileName = "data/data_1000.csv";
 	vector<vector<string>> allData = readDelimitedRows(fileName);
 
-	for (vector<string> row : allData) {
-		for (string field : row) {
+	for (vector<string> row : allData) 
+	{
+		Gamer g = new Gamer(row[0], row[1]);
+		GamerKey key(row[0], row[2], row[...]);
+
+		tree.add(key, g);
+		/*for (string field : row) 
+		{
 			cout << field << ", ";
 		}
+		*/
 		cout << endl <<"----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 	}
 }
