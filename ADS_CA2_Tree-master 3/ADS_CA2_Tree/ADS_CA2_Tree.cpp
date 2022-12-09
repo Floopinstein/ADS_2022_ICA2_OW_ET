@@ -47,7 +47,8 @@ using namespace std;
 void demoSimpleHash();
 //void demoDateHash();
 //void demoParseString();
-//void demoCSVToObject();
+void demoCSVToObject();
+//void gamerTest();
 
 int main()
 {
@@ -57,11 +58,16 @@ int main()
 	//cout << endl << "demoDateHash()..........." << endl;
 	//demoDateHash();
 
-	//cout << endl << "demoParseString()..........." << endl;
-	//demoParseString();*/
+	////cout << endl << "demoParseString()..........." << endl;
+	////demoParseString();*/
 
-	//cout << endl << "demoCSVToObject()..........." << endl;
-	//demoCSVToObject();
+	cout << endl << "demoCSVToObject()..........." << endl;
+	demoCSVToObject();
+	
+	//cout << endl << "demoSimpleHash()..........." << endl;
+	//gamerTest();
+
+
 
 	return 0;
 }
@@ -129,23 +135,45 @@ void demoSimpleHash()
 //}
 
 //best - supports rows of data that contain commas and parenthesis - thanks for Derek!
-//void demoCSVToObject(BinaryTree<GamerKey, GamerData*>& tree)
-//{
+void demoCSVToObject(BinaryTree<GamerKey, GamerData*>& tree)
+{
 	//note: data is a sub-folder under the folder with main CPP file
+	string fileName = "data/data_1000.csv";
+	vector<vector<string>> allData = readDelimitedRows(fileName);
+
+	for (vector<string> row : allData)
+	{
+	
+		GamerData Gdata = new GamerData (row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[0], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14] );
+		GamerKey Gkey = new GamerKey (row[0], row[2], row[6]);
+
+		tree.add(Gkey, Gdata);
+
+		for (string field : row) 
+		{
+			cout << field << ", ";
+		}
+	
+		cout << endl <<"----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+	}
+//}
+//void gamerTest()
+//{
 //	string fileName = "data/data_1000.csv";
+//
 //	vector<vector<string>> allData = readDelimitedRows(fileName);
 //
-//	for (vector<string> row : allData) 
+//	for (vector<string> row : allData)
 //	{
-//		GamerData Gdata = new GamerData(row[0], row[1]);
-//		GamerKey Gkey(row[0], row[2], row[...]);
+//		string user_id = row[0];
+//		string first_name = row[2];
+//		string email = row[6];
 //
-//		tree.add(Gkey, Gdata);
-//		/*for (string field : row) 
+//		for (string allData : row )
 //		{
-//			cout << field << ", ";
+//			cout << row[0] << ", " << row[2] << ", " << row[6] << endl;
+//
+//			cout << endl << "----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 //		}
-//		*/
-//		cout << endl <<"----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 //	}
 //}

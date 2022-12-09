@@ -43,7 +43,7 @@ class GamerData
 	string user_id;
 	int rank;
 	string first_name;
-	string sName;
+	string second_name;
 	string gender;
 	string dob;
 	string email;
@@ -60,10 +60,13 @@ class GamerData
 public:
 
 #pragma region Constructors
-	GamerData(string user_id, int rank, string first_name, string sName, string gender, string dob, string email, string phone, string postcode,
+	GamerData(string user_id, int rank, string first_name, string second_name, string gender, string dob, string email, string phone, string postcode,
 			  string country, string lastLogOn, string lastLogOnTime, string joinedON, double accountCredit, string address)
-		: user_id(user_id), first_name(first_name), email(email)
+
+		: user_id(user_id), rank(rank), first_name(first_name),second_name(second_name), gender(gender), dob(dob), email(email), phone(phone), postcode(postcode), 
+		country(country), lastLogOn(lastLogOn), lastLogOnTime(lastLogOnTime), joinedON(joinedON), accountCredit(accountCredit), address(address)
 	{
+
 	}
 #pragma endregion
 
@@ -97,5 +100,5 @@ public:
 
 		return input;
 	}
-
+#pragma endregion 
 };
