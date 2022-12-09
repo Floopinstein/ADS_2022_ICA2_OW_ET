@@ -1,4 +1,8 @@
 #pragma once
+#include "Gamer.h"
+#include "GamerKey.h"
+
+
 
 template <typename K, typename E>
 class TNode {
@@ -22,16 +26,16 @@ public:
 	E getData();
 	TNode();
 	TNode(K, E);
-	void setData(E Data);
+	void setData(E DataItem);
 	void setKey(K Key);
 	TNode<K, E>* getLeft();
 	TNode<K, E>* getRight();
 	void setLeft(TNode<K, E>* l);
 	void setRight(TNode<K, E>* r);
-	void add(K keyItem, E Item);
+	void add(K keyItem, E daataItem);
 	int count();
 	~TNode();
-
+	
 
 
 };

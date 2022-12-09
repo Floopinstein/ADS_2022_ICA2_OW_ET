@@ -1,9 +1,16 @@
 ﻿  BinaryTreeTest.cpp
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(325,31): error C2059: syntax error: '!='
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(325,1): error C3867: 'TNode<K,E>::getLeft': non-standard syntax; use '&' to create a pointer to member
+          with
+          [
+              K=int,
+              E=int
+          ]
 D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(306): message : while compiling class template member function 'int BinaryTree<int,int>::Height(void)'
 D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\BinaryTreeTest\BinaryTreeTest.cpp(249): message : see reference to function template instantiation 'int BinaryTree<int,int>::Height(void)' being compiled
 D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\BinaryTreeTest\BinaryTreeTest.cpp(18): message : see reference to class template instantiation 'BinaryTree<int,int>' being compiled
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(325,1): error C2143: syntax error: missing ';' before '{'
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(328,1): error C2181: illegal else without matching if
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(328,36): error C2059: syntax error: '!='
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(328,1): error C2143: syntax error: missing ';' before '{'
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\BinaryTree.h(328,1): error C3867: 'TNode<K,E>::getRight': non-standard syntax; use '&' to create a pointer to member
+          with
+          [
+              K=int,
+              E=int
+          ]

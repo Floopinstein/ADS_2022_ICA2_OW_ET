@@ -30,7 +30,7 @@ public:
 	bool Search(K KeyItem);
 	int Depth(K KeyItem);
 	int Height();
-	void SubTree(K keyItem, E Data);
+	void SubTree(K keyItem, E DataItem);
 
 
 

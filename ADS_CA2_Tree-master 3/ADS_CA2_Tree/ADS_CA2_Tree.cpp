@@ -44,29 +44,41 @@ using namespace std;
 //	return this->user_id + " - " + this->first_name + " - " + this->email;
 
 
-void demoSimpleHash();
+//void demoSimpleHash();
 //void demoDateHash();
 //void demoParseString();
-void demoCSVToObject();
-//void gamerTest();
+void Input();
+void GamerKeyPrintTest();
+void GamerDataPrintTest();
+void KeyHasher();
+
+
+
+
 
 int main()
 {
-	cout << endl << "demoSimpleHash()..........." << endl;
-	demoSimpleHash();
+	//cout << endl << "demoSimpleHash()..........." << endl;
+	//demoSimpleHash();
 
 	//cout << endl << "demoDateHash()..........." << endl;
 	//demoDateHash();
 
 	////cout << endl << "demoParseString()..........." << endl;
 	////demoParseString();*/
-
-	cout << endl << "demoCSVToObject()..........." << endl;
-	demoCSVToObject();
 	
-	//cout << endl << "demoSimpleHash()..........." << endl;
-	//gamerTest();
 
+	cout << endl << endl;
+	void Input();
+	
+	cout << endl << "KeyHasher()..........." << endl;
+	KeyHasher();
+
+	cout << endl << endl;
+	GamerKeyPrintTest();
+
+	cout << endl << endl;
+	GamerDataPrintTest();
 
 
 	return 0;
@@ -74,31 +86,30 @@ int main()
 //std::size_t myHash() const
 //{
 //	size_t hash = std::hash<string>()(this->user_id_hash)
-//		+ 31 * std::hash<int>()(this->first_name_hash)
-//		+ 57 * std::hash<double>()(this->email_hash)
-//		+ 349 * date.hash();
+//		+ 31 * std::hash<string>()(this->first_name_hash)
+//		+ 57 * std::hash<string>()(this->email_hash);
 //}
 
-void demoSimpleHash() 
-{
-
-
-	hash<string> hasherStr;
-	string user_id_hash = "WBC88XPE6LP";
-	cout << "hash[" << user_id_hash << "]: " << hasherStr(user_id_hash) << endl;
-
-	string first_name_hash = "Colby";
-	cout << "hash[" << first_name_hash << "]: " << hasherStr(first_name_hash) << endl;
-
-
-	string email_hash = "rutrum.non@aol.org";
-	cout << "hash[" << email_hash << "]: " << hasherStr(email_hash) << endl;
-
-	//we can store the hash value using size_t (basically an unsigned int)
-	size_t myHash = hasherStr("this is a hash value store in a uint");
-	cout << myHash << endl;
-
-}
+//void demoSimpleHash() 
+//{
+//
+//
+//	hash<string> hasherStr;
+//	string user_id_hash = "WBC88XPE6LP";
+//	cout << "hash[" << user_id_hash << "]: " << hasherStr(user_id_hash) << endl;
+//
+//	string first_name_hash = "Colby";
+//	cout << "hash[" << first_name_hash << "]: " << hasherStr(first_name_hash) << endl;
+//
+//
+//	string email_hash = "rutrum.non@aol.org";
+//	cout << "hash[" << email_hash << "]: " << hasherStr(email_hash) << endl;
+//
+//	//we can store the hash value using size_t (basically an unsigned int)
+//	size_t myHash = hasherStr("this is a hash value store in a uint");
+//	cout << myHash << endl;
+//
+//}
 //void demoDateHash() {
 //	Date myDate(25, 12, 2022);
 //	cout << myDate << endl;
@@ -134,46 +145,108 @@ void demoSimpleHash()
 //	}
 //}
 
-//best - supports rows of data that contain commas and parenthesis - thanks for Derek!
-void demoCSVToObject(BinaryTree<GamerKey, GamerData*>& tree)
+template<typename K, typename E>
+void Input(BinaryTree<GamerKey, GamerData>& tree)
 {
-	//note: data is a sub-folder under the folder with main CPP file
 	string fileName = "data/data_1000.csv";
+	vector<vector<string>> allData = readDelimitedRows(fileName);
+
+
+	for (vector<string> row : allData)
+	{
+		for (int i = 0; i <= 5; i++) {
+
+			GamerKey Gkey = new GamerKey(row[0], row[2], row[6]);
+			GamerData Gdata = new GamerData(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14]);
+
+			tree.add(Gkey, Gdata);
+
+			//cout << Gkey << Gdata << "test" << endl;
+
+			tree.PrintInOrder();
+		}
+	}
+}
+
+
+
+void GamerKeyPrintTest()
+{
+	string fileName = "data/data_1000.csv";
+
 	vector<vector<string>> allData = readDelimitedRows(fileName);
 
 	for (vector<string> row : allData)
 	{
-	
-		GamerData Gdata = new GamerData (row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[0], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14] );
-		GamerKey Gkey = new GamerKey (row[0], row[2], row[6]);
+		string user_id = row[0];
+		string first_name = row[2];
+		string email = row[6];
 
-		tree.add(Gkey, Gdata);
+		for (int i = 0; i <= 0; i++) {
+			
+		
+			cout << row[0] << ", " << row[2] << ", " << row[6] << endl;
 
-		for (string field : row) 
-		{
-			cout << field << ", ";
+			cout << "--------------------------------------------------------------------" << endl;
 		}
-	
-		cout << endl <<"----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 	}
-//}
-//void gamerTest()
-//{
-//	string fileName = "data/data_1000.csv";
-//
-//	vector<vector<string>> allData = readDelimitedRows(fileName);
-//
-//	for (vector<string> row : allData)
-//	{
-//		string user_id = row[0];
-//		string first_name = row[2];
-//		string email = row[6];
-//
-//		for (string allData : row )
-//		{
-//			cout << row[0] << ", " << row[2] << ", " << row[6] << endl;
-//
-//			cout << endl << "----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
-//		}
-//	}
-//}
+}
+
+void GamerDataPrintTest()
+{
+	string fileName = "data/data_1000.csv";
+
+	vector<vector<string>> allData = readDelimitedRows(fileName);
+
+	for (vector<string> row : allData)
+	{
+		string user_id = row[0];
+		string rank = row[1];
+		string first_name = row[2];
+		string second_name = row[3];
+		string gender = row[4];
+		string dob = row[5];
+		string email = row[6];
+		string phone = row[7];
+		string postcode = row[8];
+		string country = row[9];
+		string lastLogOn = row[10];
+		string lastLogOnTime = row[11];
+		string joinedON = row[12];
+		string accountCredit = row[13];
+		string address = row[14];
+
+		for (int i = 0; i <= 0; i++) {
+
+
+			cout << row[0] << ", " << row[1] << ", " << row[2] << row[3] << ", " << row[4] << ", " << row[5] << ", " << row[6] << ", " << row[7] << ", " << row[8]
+				 << ", " << row[9] << ", " << row[10] << ", " << row[11] << ", " << row[12] << ", " << row[13] << ", " << row[14] << ", " << endl;
+
+			cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+		}
+	}
+}
+
+
+void KeyHasher()
+{
+	string fileName = "data/data_1000.csv";
+
+	vector<vector<string>> allData = readDelimitedRows(fileName);
+
+	for (vector<string> row : allData) {
+
+		hash<string> hasherStr;
+		string user_id_hash = row[0];
+		cout << "IDhash [" << user_id_hash << "] " << endl;
+
+		string first_name_hash = row[2];
+		cout << "Namehash [" << first_name_hash << "] " << endl;
+
+		string email_hash = row[6];
+		cout << "Emailhash [" << email_hash << "] " << endl;
+
+		size_t GamerHash = hasherStr(user_id_hash + first_name_hash + email_hash);
+		cout << "Unique Key [" << GamerHash << "] " << endl << endl;
+	}
+}

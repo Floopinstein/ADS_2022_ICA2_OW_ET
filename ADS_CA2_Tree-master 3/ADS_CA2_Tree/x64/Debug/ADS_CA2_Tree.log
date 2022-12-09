@@ -1,15 +1,3 @@
 ﻿  ADS_CA2_Tree.cpp
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(145,169): error C2661: 'GamerData::GamerData': no overloaded function takes 16 arguments
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(145,19): error C2512: 'GamerData': no appropriate default constructor available
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\Gamer.h(40,7): message : see declaration of 'GamerData'
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(146,17): error C2065: 'row': undeclared identifier
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(146,25): error C2065: 'row': undeclared identifier
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(146,33): error C2065: 'row': undeclared identifier
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(148,18): error C2065: 'Gdata': undeclared identifier
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(150,23): error C2065: 'row': undeclared identifier
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(150,21): error C2143: syntax error: missing ';' before ':'
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(150,26): error C2143: syntax error: missing ';' before ')'
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(157,1): error C2059: syntax error: '}'
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(157,1): error C2143: syntax error: missing ';' before '}'
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(159,1): error C2143: syntax error: missing ';' before '{'
-C:\Users\eimis\OneDrive\Desktop\College Year 3\Algorithms and Data Structures\github\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\ADS_CA2_Tree\ADS_CA2_Tree.cpp(159,1): error C2447: '{': missing function header (old-style formal list?)
+ADS_CA2_Tree.obj : error LNK2019: unresolved external symbol "void __cdecl Input(void)" (?Input@@YAXXZ) referenced in function main
+D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\x64\Debug\ADS_CA2_Tree.exe : fatal error LNK1120: 1 unresolved externals
