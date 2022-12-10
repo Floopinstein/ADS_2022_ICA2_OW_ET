@@ -60,6 +60,7 @@ namespace NodeTests
 
 		}
 		
+		//checking if nodes are added to correct place (Right Side)
 		TEST_METHOD(TestAddGreaterThanChildren)
 		{
 			TNode<int, int> node(4, 4);
@@ -74,6 +75,7 @@ namespace NodeTests
 
 		}
 		
+		//checking if nodes are added to correct place (Left Side)
 		TEST_METHOD(TestAddLessThanChildren)
 		{
 			TNode<int, int> node(6, 6);
@@ -89,7 +91,7 @@ namespace NodeTests
 		}
 
 
-
+		//Testing count function
 		TEST_METHOD(TestCount)
 		{
 			TNode<int, int> node(9, 9);
@@ -99,8 +101,6 @@ namespace NodeTests
 			node.add(6, 6);
 			node.add(18, 18);
 			node.add(4, 4);
-
-
 
 			Assert::AreEqual(6, node.count());
 

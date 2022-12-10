@@ -4,7 +4,7 @@
 using namespace std;
 
 
-
+//Creating GamerKey Class
 class GamerKey
 {
 #pragma region Fields
@@ -16,6 +16,7 @@ class GamerKey
 
 public:
 
+	//Making Contructors for variables
 #pragma region Constructors
 	GamerKey(string user_id, string first_name, string email)
 		
@@ -25,6 +26,7 @@ public:
 	}
 #pragma endregion
 
+	//Making Getters/Setters for each variable
 #pragma region Get/Set
 	string getUser_id() const { return this->user_id; }
 	string getFirst_name() const { return this->first_name; }
@@ -33,6 +35,7 @@ public:
 
 #pragma region Operators & Hash
 
+	//Getting all variables back as one group
 	bool operator==(const GamerKey& gamer)
 	{
 		return this->user_id == gamer.user_id
@@ -40,6 +43,7 @@ public:
 			&& this->email == gamer.email;
 	}
 
+	//Seperating variables with commas
 	friend ostream& operator<<(ostream& output, GamerKey& gamer)
 	{
 		output << gamer.user_id << ",";

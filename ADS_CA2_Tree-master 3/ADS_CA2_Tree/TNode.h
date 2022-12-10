@@ -255,6 +255,7 @@ int TNode<K, E>::count()
 	return c;
 }
 
+//Remove Function
 template <typename K, typename E>
 TNode<K, E>::~TNode(){
 

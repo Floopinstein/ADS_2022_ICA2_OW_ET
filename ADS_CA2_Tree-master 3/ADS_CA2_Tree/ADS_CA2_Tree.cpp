@@ -71,7 +71,7 @@ int main()
 	cout << endl << endl;
 	void Input();
 	
-	cout << endl << "KeyHasher()..........." << endl;
+	cout << endl << "KeyHasher" << endl;
 	KeyHasher();
 
 	cout << endl << endl;
@@ -145,6 +145,8 @@ int main()
 //	}
 //}
 
+//Input Function
+//Inputs data and keys into the binary tree
 template<typename K, typename E>
 void Input(BinaryTree<GamerKey, GamerData>& tree)
 {
@@ -170,6 +172,7 @@ void Input(BinaryTree<GamerKey, GamerData>& tree)
 
 
 
+//Prints all of the Keys values from the csv file
 void GamerKeyPrintTest()
 {
 	string fileName = "data/data_1000.csv";
@@ -192,10 +195,13 @@ void GamerKeyPrintTest()
 	}
 }
 
+//Prints all of the data from the csv file
 void GamerDataPrintTest()
 {
+	//reads filename
 	string fileName = "data/data_1000.csv";
 
+	//Inserts data from file into our variables
 	vector<vector<string>> allData = readDelimitedRows(fileName);
 
 	for (vector<string> row : allData)
@@ -216,6 +222,7 @@ void GamerDataPrintTest()
 		string accountCredit = row[13];
 		string address = row[14];
 
+		//makes it loop only once, otherwise each row would print 15 times
 		for (int i = 0; i <= 0; i++) {
 
 
@@ -227,7 +234,7 @@ void GamerDataPrintTest()
 	}
 }
 
-
+//KeyHasher turns the key values into numbers then they get added up into the GamerHash to become a unique key
 void KeyHasher()
 {
 	string fileName = "data/data_1000.csv";

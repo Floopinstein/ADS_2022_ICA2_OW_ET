@@ -7,10 +7,7 @@ template <typename K, typename E>
 class BinaryTree
 {
 
-	void addItemToArray(TNode<K, E>* node, int& pos, int* arr);
-
-
-
+	int addItemToArray(TNode<K, E>* node, int& pos, int* arr);
 
 public:
 
@@ -19,6 +16,7 @@ public:
 	BinaryTree();
 	void add(K KeyItem, E DataItem);
 	bool Delete(K KeyItem, E DataItem);
+	bool Search(E Dataitem);
     int count();
     void clear();
     void PrintInOrder();
@@ -27,71 +25,88 @@ public:
     void PrintInOrder(TNode<K,E>* node);
     void PrintPreOrder(TNode<K, E>* node);
     void PrintPostOrder(TNode<K, E>* node);
-	bool Search(K KeyItem);
 	int Depth(K KeyItem);
 	int Height();
-	void SubTree(K keyItem, E DataItem);
-
-
-
-
-
-//	bool search(K KeyItem, E DataItem)
-//	{
-//
-//	TNode<K, E>* toBeFound = root;
-//	bool found = false;
-//
-//	while (!found && toBeFound != nullptr)
-//	{
-//		if (toBeFound->getData() == DataItem)
-//		{
-//			found = true;
-//			return toBeFound;
-//		}
-//		else
-//		{
-//			if (toBeFound->getData() > DataItem)
-//			{
-//				toBeFound = toBeFound->getLeft();
-//			}
-//			else
-//			{
-//				toBeFound = toBeFound->getRight();
-//			}
-//		}
-//	}
-//	if (!found)
-//		return nullptr;
-//}
-
-
-
+	void SubTree(TNode<K, E>* node);
+	void BalancedTree();
+	void Balance();
 };
 
 
 
-
+//Setting root as null pointer
 template<typename K, typename E>
 BinaryTree<K, E>::BinaryTree() {
 	root = nullptr;
 }
 
 
+
+
+
+
+
+
+
+//Add Function
 template<typename K, typename E>
 void BinaryTree<K, E>::add(K KeyItem, E DataItem) {
-	if (root == nullptr)
-	{
+	if (root == nullptr){
 		root = new TNode<K, E>();
         root->setKey(KeyItem);
 		root->setData(DataItem);
 	}
-	else {
+	else{
 		root->add(KeyItem, DataItem);
 	}
 }
 
 
+
+
+
+
+
+
+
+
+//Search Function
+template <typename K, typename E>
+bool BinaryTree<K, E>::Search(E DataItem){
+	//create Searcher which finds the node we want
+	TNode<K, E>* Searcher = root;
+	bool found = false;
+
+	//while what were looking for isnt found and our Searcher exists
+	while (!found && Searcher != nullptr){
+
+		//if our Searcher is equal to the data its looking at we set found to true
+		if (Searcher->getData() == DataItem){
+			found = true;
+		}
+		//if what were looking for is smaller than the item were on, go right, if not we go left
+		else {
+			if (Searcher->getData() < DataItem){
+				Searcher = Searcher->getRight();
+			}
+			if (Searcher->getData() > DataItem){
+				Searcher = Searcher->getLeft();
+			}
+		}
+	}
+	if (!found)
+		return false;
+}
+
+
+
+
+
+
+
+
+
+//Count Function
 template <typename K, typename E>
 int BinaryTree<K, E>::count()
 {
@@ -102,47 +117,58 @@ int BinaryTree<K, E>::count()
 
 
 
+
+
+
+
+
+
+
 //Delete Function
 template <typename K, typename E>
 bool BinaryTree<K, E>::Delete(K keyItem, E Dataitem)
 {
-	TNode<K, E>* toBeRemoved = root;
+	//create Remover which searches out what we want removed 
+	TNode<K, E>* Remover = root;
 	TNode<K, E>* parent = nullptr;
 	bool found = false;
 
-	while (!found && toBeRemoved != nullptr)
-	{
+	while (!found && Remover != nullptr){
 
-		if (toBeRemoved->getData() == Dataitem && toBeRemoved->getKey() == keyItem){
-
+		//if the Remover is equal to the data and key, set found to true
+		if (Remover->getData() == Dataitem && Remover->getKey() == keyItem){
 			found = true;
 		}
+
 		else{
-			parent = toBeRemoved;
-			if (toBeRemoved->getData() > Dataitem && toBeRemoved->getKey() > keyItem){
-				toBeRemoved = toBeRemoved->getLeft();
+			parent = Remover;
+
+			//if the Remover is bigger than our data and key, go left, if not go right, 
+			if (Remover->getData() > Dataitem && Remover->getKey() > keyItem){
+				Remover = Remover->getLeft();
 			}
 			else{
-				toBeRemoved = toBeRemoved->getRight();
+				Remover = Remover->getRight();
 			}
 		}
 	}
 	if (!found)
 		return false;
 
-	if (toBeRemoved->getLeft() == nullptr || toBeRemoved->getRight() == nullptr){
+	//if left or right of Remover is empty then set Remover as child there
+	if (Remover->getLeft() == nullptr || Remover->getRight() == nullptr){
 		TNode<K, E>* newChild;
-		if (toBeRemoved->getLeft() == nullptr){
+		if (Remover->getLeft() == nullptr){
 
-			newChild = toBeRemoved->getRight();
+			newChild = Remover->getRight();
 		}
 		else{
-			newChild = toBeRemoved->getLeft();
+			newChild = Remover->getLeft();
 		}
 		if (parent == nullptr){
 			root = newChild;
 		}
-		else if (parent->getLeft() == toBeRemoved){
+		else if (parent->getLeft() == Remover){
 			parent->setLeft(newChild);
 		}
 		else{
@@ -151,16 +177,15 @@ bool BinaryTree<K, E>::Delete(K keyItem, E Dataitem)
 		return true;
 	}
 
-	TNode<K, E>* smallestParent = toBeRemoved;
-	TNode<K, E>* smallest = toBeRemoved->getRight();
+	TNode<K, E>* smallestParent = Remover;
+	TNode<K, E>* smallest = Remover->getRight();
 	while (smallest->getLeft() != nullptr){
 		
 		smallestParent = smallest;
-		
 		smallest = smallest->getLeft();
 	}
-	toBeRemoved->setData(smallest->getData());
-	if (smallestParent == toBeRemoved){
+	Remover->setData(smallest->getData());
+	if (smallestParent == Remover){
 
 		smallestParent->setRight(smallest->getRight());
 	}
@@ -172,111 +197,96 @@ bool BinaryTree<K, E>::Delete(K keyItem, E Dataitem)
 
 
 
+
+
+
+
+
+//Clear Function
 template <typename K, typename E>
-void BinaryTree<K, E>::clear()
-{
+void BinaryTree<K, E>::clear(){
     delete root;
     root = nullptr;
 }
 
 
+
+
+
+
+
+
+
+
+//Print Functions
 template<typename K, typename E>
-void BinaryTree<K, E>::PrintInOrder()
-{
-    this->printInOrder(root);
-    cout << endl;
-}
-
-
-template<typename K, typename E>
-void BinaryTree<K, E>::PrintInOrder(TNode<K, E>* node)
-{
-
-    if (node != nullptr)
-    {
-        printInOrder(node->getLeft());
-        cout << node->getItem() << " ";
-        printInOrder(node->getRight());
-    }
-}
-
-
-template<typename K, typename E>
-void BinaryTree<K, E>::PrintPreOrder()
-{
-    this->printPreOrder(root);
+void BinaryTree<K, E>::PrintInOrder(){
+    this-> printInOrder();
     cout << endl;
 }
 
 template<typename K, typename E>
-void BinaryTree<K, E>::PrintPreOrder(TNode<K, E>* node)
-{
+void BinaryTree<K, E>::PrintInOrder(TNode<K, E>* node){
 
-    if (node != nullptr)
-    {
-        cout << node->getItem() << " ";
-        printPreOrder(node->getLeft());
-        printPreOrder(node->getRight());
+    if (node != nullptr){
+        PrintInOrder(node->getLeft());
+        cout << node->getData() << " ";
+        PrintInOrder(node->getRight());
     }
 }
 
 template<typename K, typename E>
-void BinaryTree<K, E>::PrintPostOrder()
-{
-    this->printPostOrder(root);
+void BinaryTree<K, E>::PrintPreOrder(){
+    this->PrintPreOrder(root);
+    cout << endl;
+}
+
+template<typename K, typename E>
+void BinaryTree<K, E>::PrintPreOrder(TNode<K, E>* node){
+
+    if (node != nullptr){
+        cout << node->getData() << " ";
+		PrintPreOrder(node->getLeft());
+		PrintPreOrder(node->getRight());
+    }
+}
+
+template<typename K, typename E>
+void BinaryTree<K, E>::PrintPostOrder(){
+    this->PrintPostOrder(root);
     cout << endl;
 }
 template<typename K, typename E>
-void BinaryTree<K, E>::PrintPostOrder(TNode<K, E>* node)
-{
+void BinaryTree<K, E>::PrintPostOrder(TNode<K, E>* node){
 
-    if (node != nullptr)
-    {
+    if (node != nullptr){
 
-        printPostOrder(node->getLeft());
-        printPostOrder(node->getRight());
-        cout << node->getItem() << " ";
+		PrintPostOrder(node->getLeft());
+		PrintPostOrder(node->getRight());
+        cout << node->getData() << " ";
     }
 }
 
 
 
-template <typename K, typename E>
-bool BinaryTree<K, E>::Search(K keyItem)
-{
-	TNode<K, E>* toBeSearched = root;
-	TNode<K, E>* parent = nullptr;
-	bool found = false;
-
-	while (!found && toBeSearched != nullptr){
-
-		if (toBeSearched->getKey() == keyItem){
-			found = true;
-		}
-		else{
-			parent = toBeSearched;
-
-			if (toBeSearched->getKey() > keyItem){
-				toBeSearched = toBeSearched->getLeft();
-			}
-			else{
-				toBeSearched = toBeSearched->getRight();
-			}
-		}
-	}
-	if (!found)
-		return false;
-}
 
 
+
+
+
+
+
+//Depth Function
 template <typename K, typename E>
 int BinaryTree<K, E>::Depth(K keyItem){
 
 	TNode<K, E>* toBeSearched = root;
 	TNode<K, E>* parent = nullptr;
 	bool found = false;
+	//Create Depth Counter to track how many times we move down the tree
 	int DepthCounter = -1;
 
+	//Everytime we dont find our bottom node we move down and add to out depth counter
 	while (!found && toBeSearched != nullptr) {
 
 		DepthCounter++;
@@ -302,9 +312,20 @@ int BinaryTree<K, E>::Depth(K keyItem){
 }
 
 
+
+
+
+
+
+
+
+
+//Height Function
+//Code not 100% functional
 template <typename K, typename E>
 int BinaryTree<K, E>::Height(){
 
+	//Code goes down through the tree similar to depth and when it finds a node with no children we return true, finds a path to the end but not the longest path
 	TNode<K, E>* toBeSearched = root;
 	TNode<K, E>* parent = nullptr;
 	bool found = false;
@@ -322,10 +343,10 @@ int BinaryTree<K, E>::Height(){
 		else {
 			parent = toBeSearched;
 
-			if (toBeSearched->getLeft != nullptr){
+			if (toBeSearched->getLeft() != nullptr) {
 				toBeSearched = toBeSearched->getLeft();
 			}
-			else if(toBeSearched->getRight != nullptr) {
+			else if(toBeSearched->getRight() != nullptr) {
 				toBeSearched = toBeSearched->getRight();
 			}
 		}
@@ -338,10 +359,57 @@ int BinaryTree<K, E>::Height(){
 
 
 
-template <typename K, typename E>
-void BinaryTree<K, E>::SubTree(K keyItem, E Data){
 
 
 
+
+
+//Subtree Function
+template<typename K, typename E>
+void BinaryTree<K, E>::SubTree(TNode<K, E>* node) {
+
+	BinaryTree<K, E> tree;
+	if (node == nullptr) {
+		tree.root = node;
+	}
+
+	return BinaryTree();
+
+}
+
+
+
+
+
+
+
+
+//Balance Function
+template<typename K, typename E>
+void BalancedTree(BinaryTree<K, E>& tree, int min, int max, int arr)
+{
+	if (min < max){
+
+		int mid = (min + max) / 2;
+		tree.add(arr[mid]);
+		BalancedTree(tree, min, mid, arr);
+		BalancedTree(tree, mid + 1, max, arr);
+	}
+}
+
+//Balance Funstion
+template<typename K, typename E>
+void Balance(BinaryTree<K, E>& tree){
+
+	int min;
+	int max;
+	int mid;
+	int array[];
+
+	array = tree.addItemToArray();
+	int max = tree.count();
+	tree.clear();
+	BalancedTree(tree, min, max, array);
+	delete[] array;
 
 }

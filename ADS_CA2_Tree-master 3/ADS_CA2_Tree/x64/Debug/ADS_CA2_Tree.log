@@ -1,3 +1,2 @@
 ﻿  ADS_CA2_Tree.cpp
-ADS_CA2_Tree.obj : error LNK2019: unresolved external symbol "void __cdecl Input(void)" (?Input@@YAXXZ) referenced in function main
-D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\x64\Debug\ADS_CA2_Tree.exe : fatal error LNK1120: 1 unresolved externals
+  ADS_CA2_Tree.vcxproj -> D:\Downloads\GitHub Resp\ADS_2022_ICA2_OW_ET\ADS_CA2_Tree-master 3\x64\Debug\ADS_CA2_Tree.exe

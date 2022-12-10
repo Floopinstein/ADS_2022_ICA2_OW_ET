@@ -37,6 +37,7 @@ using namespace std;
 //
 //};
 
+//Creating GamerData Class
 class GamerData
 {
 #pragma region Fields
@@ -59,6 +60,7 @@ class GamerData
 
 public:
 
+	//Making Contructors for variables
 #pragma region Constructors
 	GamerData(string user_id, string rank, string first_name, string second_name, string gender, string dob, string email, string phone, string postcode,
 		string country, string lastLogOn, string lastLogOnTime, string joinedON, string accountCredit, string address)
@@ -70,6 +72,7 @@ public:
 	}
 #pragma endregion
 
+	//Making Getters/Setters for each variable
 #pragma region Get/Set
 	string getUser_id() const { return this->user_id; }
 	string    getrank() const { return this->rank; }
@@ -90,6 +93,7 @@ public:
 
 #pragma region Operators & Hash
 
+	//Getting all variables back as one group
 	bool operator==(const GamerData& gamer)
 	{
 		return this->user_id == gamer.user_id
@@ -110,6 +114,7 @@ public:
 
 	}
 
+	//Seperating variables with commas
 	friend ostream& operator<<(ostream& output, GamerData& gamer)
 	{
 		output << gamer.user_id << ",";
